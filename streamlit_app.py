@@ -158,7 +158,7 @@ def create_tide_chart(tide_data, start_date, end_date, threshold=1.6):
                 x1=all_times[end_idx],
                 y0=0,
                 y1=max(all_heights) * 1.1,
-                fillcolor="rgba(0, 255, 0, 0.2)",
+                fillcolor="rgba(0, 255, 0, 0.1)",
                 line=dict(width=0),
             )
     
@@ -194,9 +194,6 @@ def create_tide_chart(tide_data, start_date, end_date, threshold=1.6):
 def main():
     st.set_page_config(page_title="Tide Predictor", page_icon="🌊", layout="wide")
     
-    st.title("🌊 Tide Predictor - Victoria Point Boat Ramp")
-    st.markdown("**Interactive tide prediction with boatable windows (tide > 1.6m during daylight hours)**")
-    
     # Sidebar for controls
     st.sidebar.header("⚙️ Settings")
     
@@ -230,6 +227,10 @@ def main():
         step=0.1,
         help="Minimum tide height required for boating"
     )
+    
+    # Title and subtitle with dynamic threshold
+    st.title("🌊 Tide Predictor - Victoria Point Boat Ramp")
+    st.markdown(f"**Interactive tide prediction with boatable windows (tide > {threshold}m during daylight hours)**")
     
     # Validate date range
     if start_date > end_date:
