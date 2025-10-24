@@ -1,0 +1,18 @@
+# Tide Predictor Requirements
+# Python 3.13+ recommended
+
+# Core dependencies
+requests==2.32.5
+python-dotenv==1.1.1
+
+# Data processing
+pandas==2.3.3
+numpy==2.3.4
+
+# Visualization
+streamlit==1.50.0
+plotly==6.3.1
+
+# Date/time handling
+python-dateutil==2.9.0.post0
+pytz==2025.2
